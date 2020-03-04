@@ -12,6 +12,6 @@ export class MyaccountComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit(){
-    console.log("eddddddd");
+    console.log("runing");
   }
 }
