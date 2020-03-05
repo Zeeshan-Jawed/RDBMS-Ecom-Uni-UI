@@ -1,12 +1,15 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-3">
-            <div class="sidemenu">
-                <h6>
+            <div class="sidemenu navbar">
+                <button class="btn  dropdown-toggle shadow-none " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-bars mr-2" aria-hidden="true"></i>
-                    <span>categories</span>
-                </h6>
-
+                    categories
+                  </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <span class="dropdown-item " *ngFor="let item of categories">{{item.list}}</span>
+                    <span class="dropdown-item" [routerLink]="['/categories']" >View All</span>
+                  </div>
             </div>
         </div>
         <div class="col-lg-9">
