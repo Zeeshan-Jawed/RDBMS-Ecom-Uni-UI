@@ -1,0 +1,40 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:500&display=swap');
+
+.sidelogo{
+    text-align: center;
+    padding: 15px;
+}
+
+#sidebar-container{
+    height:100vh;
+    background-color: #001737;
+    padding: 0;
+    width: 215px;
+}
+#sidebar-container .list-group a {
+    height: 50px;
+    color: #6c7293;
+    background-color: #001737;
+    font-size: 14px;
+    font-family: 'Roboto Slab', serif;
+}
+#sidebar-container .list-group a :hover{
+    
+    color: white;
+    
+}
+li.list-group-item{
+    background-color:#001737;
+    color: white;
+    font-weight:900;
+    font-size: 14px;
+    font-family: 'Roboto Slab', serif;
+    
+    text-transform: uppercase;
+}
+
+.navclr{
+    background-color: #001737;
+}
+

@@ -1,0 +1,110 @@
+<div class="container-fluid">
+    <div class="row">
+     <div id="sidebar-container" class="sidebar-expanded ">
+         <div class="sidelogo">
+             <a href="#">
+                 <img src="http://www.urbanui.com/dashflat/template/images/logo.svg" alt="">
+         </a>
+         </div>
+ 
+         <ul class="list-group">
+             
+             <li class="list-group-item">
+                 <small>MAIN MENU</small>
+             </li>
+            
+             <a [routerLink]="['/admin/']" routerLinkActive="router-link-active" class="list-group-item list-group-item-action flex-column align-items-start">
+                 <div class="d-flex w-100 justify-content-start align-items-center">
+                     <span class="fa fa-dashboard fa-fw mr-3"></span> 
+                     <span class="menu-collapsed">Dashboard</span>
+                   
+                 </div>
+             </a>
+             <li class="list-group-item">
+                <small>Products</small>
+            </li>
+           
+            <a [routerLink]="['/admin/categories']" routerLinkActive="router-link-active" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-list-alt fa-fw mr-3"></span> 
+                    <span class="menu-collapsed">Categories</span>
+                  
+                </div>
+            </a>
+            <a [routerLink]="['/admin/sub-categories']" routerLinkActive="router-link-active" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-cubes fa-fw mr-3"></span> 
+                    <span class="menu-collapsed">Sub-Categories</span>
+                </div>
+            </a>
+            <a [routerLink]="['/admin/brands']" routerLinkActive="router-link-active"  class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-tag fa-fw mr-3"></span> 
+                    <span class="menu-collapsed">Brands</span>
+                </div>
+            </a>
+            <a [routerLink]="['/admin/products']" routerLinkActive="router-link-active"  class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-product-hunt fa-fw mr-3"></span> 
+                    <span class="menu-collapsed">Products</span>
+                </div>
+            </a>
+            <li class="list-group-item">
+                <small>Members</small>
+            </li>
+           
+            <a [routerLink]="['/admin/users']" routerLinkActive="router-link-active" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-users fa-fw mr-3"></span> 
+                    <span class="menu-collapsed">Users</span>
+                  
+                </div>
+            </a>
+            <a [routerLink]="['/admin/vendors']" routerLinkActive="router-link-active" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-user fa-fw mr-3"></span> 
+                    <span class="menu-collapsed">Vendors</span>
+                </div>
+            </a>
+            <li class="list-group-item">
+                <small>Details</small>
+            </li>
+           
+            <a [routerLink]="['/admin/orders']" routerLinkActive="router-link-active" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-shopping-cart fa-fw mr-3"></span> 
+                    <span class="menu-collapsed">Orders List</span>
+                  
+                </div>
+            </a>
+             </ul>
+             </div>
+ 
+     
+       <div class="col p-0">
+         <nav class="navbar navbar-expand-lg navbar-dark navclr w-100">
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+               <a class="navbar-brand" href="#">Hidden brand</a>
+               <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                 <li class="nav-item active">
+                   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                 </li>
+                 <li class="nav-item">
+                   <a class="nav-link" href="#">Link</a>
+                 </li>
+                 
+        
+               </ul>
+               
+             </div>
+           </nav>
+           <router-outlet ></router-outlet>
+     </div>
+    </div>
+    
+ 
+ 
+ </div>

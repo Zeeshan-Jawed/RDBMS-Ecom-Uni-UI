@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{Categories} from '../models/Categories';
+import{Categories} from '../../models/Categories';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',

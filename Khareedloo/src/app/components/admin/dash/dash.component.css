@@ -1,0 +1,45 @@
+.card-org{
+    background-color: rgba(245, 171, 53, 1);
+    color: rgba(245, 171, 53, 1);
+    
+}
+.card-pink{
+    background-color:rgba(240, 52, 52, 1);
+    color:rgba(240, 52, 52, 1); ;
+}
+.card-purple{
+    background-color: rgba(145, 61, 136, 1);
+    color: rgba(145, 61, 136, 1);
+}
+.card-green{
+    background-color: rgba(0, 177, 106, 1);
+    color: rgba(0, 177, 106, 1);
+}
+.card-blue{
+    background-color: rgba(30, 139, 195, 1);
+    color: rgba(30, 139, 195, 1);
+}
+.content{
+    color: white;
+    float: right;
+    font-weight: 500;
+    font-size: 1.4em;
+    font-family: monospace;
+}
+i.fa {
+    /* display: inline-block; */
+    border-radius: 100px;
+    position: relative;
+    top: -25px;
+    padding: 0.3em 0.3em;
+   background-color: white;
+  }
+.row{
+    padding-bottom: 2em;
+}
+.value{
+    font-weight: 700;
+    font-size: 2em;
+    position: relative;
+    text-align: right;
+}

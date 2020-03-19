@@ -1,0 +1,40 @@
+.mainpanel{
+  height: 100%;
+  background-color: #eaeaea;
+}
+.pagetitle{
+  font-weight: 700;
+  font-size: 27px;
+  
+}
+.option{
+  display: flex;
+  justify-content: flex-end;
+}
+.search-block{
+  width: 220px;
+  
+}
+.form-control{
+  border:1px solid #999999;
+  border-radius: 20px;
+
+}
+#search-icon{
+  color: #999999;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.search-button{
+  border:1px solid #999999;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;    
+  background-color: white;  
+}
+.item_holder{
+  background-color: khaki;
+  width: 100%;
+  height: 140px;
+  margin-bottom: 30px;
+  margin-left: 60px;
+}
