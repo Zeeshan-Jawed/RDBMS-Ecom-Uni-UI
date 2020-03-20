@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{Categories} from '../../../models/Categories';
+import { CategoriesService } from 'src/app/services/categories.service';
 
 @Component({
   selector: 'app-categories',
@@ -7,17 +7,24 @@ import{Categories} from '../../../models/Categories';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
-  categories:Categories[];
-
-  constructor() { 
-    this.categories=[
-      {list:'Food'},
-      {list:'Mobile'},
-      {list:'TV'},
-      {list:'Kids'}
-    ] }
-
+  categories=[];
+  indexitem:number;
+  constructor(private _categoriesService:CategoriesService) {}
   ngOnInit() {
+    this.categories=this._categoriesService.categories;
   }
-
+addcategory(cat,img){
+  this.categories.push({
+    list:cat.value,
+    image:img.value
+  });
+ 
+}
+removecategory(item){
+  this.categories.splice(item,1)
+  
+}
+indexcategory(i){
+  this.indexitem=i
+}
 }

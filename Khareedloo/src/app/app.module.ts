@@ -11,7 +11,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/admin/login/login.component';
 import { MyaccountComponent } from './components/myaccount/myaccount.component';
-import { SidebarComponent } from './components/admin/sidebar/sidebar.component';
 import { PanelComponent } from './components/admin/panel/panel.component';
 import { NavBarComponent } from './components/admin/nav-bar/nav-bar.component';
 import { CategoriesComponent } from './components/admin/categories/categories.component';
@@ -28,6 +27,8 @@ import { UsersService } from './services/users.service';
 import { VendorsService } from './services/vendors.service';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { DashComponent } from './components/admin/dash/dash.component';
+import { BannerComponent } from './components/admin/banner/banner.component';
+import { BannerService } from './services/banner.service';
 
 
 @NgModule({
@@ -40,7 +41,6 @@ import { DashComponent } from './components/admin/dash/dash.component';
     DashboardComponent,
     LoginComponent,
     MyaccountComponent,
-    SidebarComponent,
     PanelComponent,
     NavBarComponent,
     CategoriesComponent,
@@ -51,6 +51,7 @@ import { DashComponent } from './components/admin/dash/dash.component';
     VendorsComponent,
     NotfoundComponent,
     DashComponent,
+    BannerComponent,
     
   ],
   imports: [
@@ -64,7 +65,8 @@ import { DashComponent } from './components/admin/dash/dash.component';
     OrdersService,
     ProductsService,
     UsersService,
-    VendorsService],
+    VendorsService,
+    BannerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

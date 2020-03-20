@@ -12,6 +12,7 @@ import { VendorsComponent } from './components/admin/vendors/vendors.component';
 import { OrdersComponent } from './components/admin/orders/orders.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { DashComponent } from './components/admin/dash/dash.component';
+import { BannerComponent } from './components/admin/banner/banner.component';
 
 
 
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path : 'users' ,component:UsersComponent},
   {path : 'vendors' ,component:VendorsComponent},
   {path : 'orders' ,component:OrdersComponent},
+  {path : 'banner' ,component:BannerComponent},
   ]},
   {path:'**',component:NotfoundComponent}
 ];

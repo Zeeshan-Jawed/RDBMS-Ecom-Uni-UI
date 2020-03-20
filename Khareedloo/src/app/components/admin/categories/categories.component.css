@@ -15,7 +15,7 @@
   width: 220px;
   
 }
-.form-control{
+.serach{
   border:1px solid #999999;
   border-radius: 20px;
 
@@ -32,9 +32,21 @@
   background-color: white;  
 }
 .item_holder{
-  background-color: khaki;
+  background-color: rgb(59, 83, 218);
   width: 100%;
-  height: 140px;
+  height: 150px;
   margin-bottom: 30px;
-  margin-left: 60px;
+  margin-left: 50px;
+  
+  border-radius: 10px;
 }
+label{
+  font-weight: 500;
+}
+
+
+.card-footer{
+  height: 45px !important;
+}
+
+

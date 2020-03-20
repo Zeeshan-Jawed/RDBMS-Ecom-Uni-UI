@@ -1,3 +1,4 @@
 export interface Categories {
-    list:string
+    list:string,
+    image?:any
   }
