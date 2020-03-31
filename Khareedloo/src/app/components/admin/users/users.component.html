@@ -1,1 +1,102 @@
-<p>users works!</p>
+<div class=" container mainpanel ">
+    <div class="content-wrapper p-3">
+        <div class="row mb-4">
+            <div class="col">
+                <div class="pagetitle ">Users</div>
+                <h1><p>Today is {{today |date}}</p>
+                    </h1>
+            </div>
+            <div class="col">
+                <div class="option">
+                    <div class="search-block mr-3">
+                        <div class="input-group  ">
+                            <input class=" serach form-control p-3 shadow-none" type="search" placeholder="Search">
+                            <div class="input-group-append">
+                                <button class="search-button " type="submit">
+                                    <i id="search-icon" class=" fa fa-search fa-1x"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" mr-3">
+                        <button class="btn btn-primary" type="button" data-toggle="collapse"
+                            data-target="#collapse" aria-expanded="false" aria-controls="collapse">
+                            Add New
+                        </button>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="collapse" id="collapse">
+            <div class="card card-body">
+                <h2 class=" pb-4 pt-3">
+                    <span class="text-dark">Add Users</span></h2>
+                <form (ngSubmit)="onAddUser(userForm.value)" #userForm="ngForm">
+                    <div class="form-group row">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Name</label>
+                        <div class="col-sm-5 ">
+                            <input type="text"  class="form-control"placeholder="Enter Name"
+                            name="name" ngModel>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-5 ">
+                            <input type="email"  class="form-control"  placeholder="Enter Email Name"
+                            name="email" ngModel>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Contact No.</label>
+                        <div class="col-sm-5 ">
+                            <input type="text"  class="form-control"  placeholder="Enter Contact No." 
+                            name="contactNo" ngModel>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-5 ">
+                            <input type="password"  class="form-control"placeholder="Enter Password" 
+                            name="password" ngModel>
+                        </div>
+                        
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Address</label>
+                        <div class="col-sm-5 ">
+                            <input type="text"  class="form-control"  placeholder="Enter Address"
+                            name="address" ngModel>
+                        </div>
+                    </div>
+                    <button  type="submit" class="btn btn-primary" >Add</button>
+                    <div class="alert alert-primary" role="alert" >
+                        {{message}}
+                      </div>
+                </form>
+            </div>
+          </div>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Register On</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <th scope="row">1</th>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.registerdate| date}}</td>
+                <td>Edit</td>
+              </tr>
+              
+            </tbody>
+          </table>
+    </div>
+</div>

@@ -18,7 +18,7 @@
                     </div>
                     <div class=" mr-3">
                         <button class="btn btn-primary" type="button" data-toggle="collapse"
-                            data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            data-target="#collapse" aria-expanded="false" aria-controls="collapse">
                             Add New
                         </button>
 
@@ -26,70 +26,70 @@
                 </div>
             </div>
         </div>
-        <div class="card ">
-            <div class="collapse" id="collapseExample">
+        <div class="card " >
+            <div class="collapse" id="collapse">
                 <div class="card card-body">
                     <h2 class=" pb-4 pt-3">
                         <span class="text-dark">Add Category</span></h2>
-                    <form>
+                    <form (ngSubmit)="onSubmit(categoryForm)" #categoryForm="ngForm">
 
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Category Name</label>
                             <div class="col-sm-5 ">
-                                <input type="text" #cat class="form-control" id="category" placeholder="Enter Category Name">
+                                <input type="text"  class="form-control" id="categoryname" placeholder="Enter Category Name"
+                                name="categoryname" ngModel required>
                             </div>
 
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Image Url</label>
                             <div class="col-sm-5">
-                                <input type="url" #img class="form-control" id="category" placeholder="Enter Image Url">
+                                <input type="url"  class="form-control" id="categoryimage" placeholder="Enter Image Url"
+                                name="categoryimage" ngModel required>
                             </div>
                         </div>
-                        <button (click)="addcategory(cat,img)" type="submit" class="btn btn-primary">Save</button>
+                        <button  type="submit" class="btn btn-primary" [disabled]="!categoryForm.valid">Save</button>
                     </form>
                 </div>
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-lg-3 col-sm-6 col-xs-12 " *ngFor="let item of categories index as i">
-                        <div class="card mb-5" style="width: 15rem;">
-                            <img class="card-img-top" src="{{item.image}}" height="150 !important">
-                            <div class="card-footer bg-transparent ">{{item.list}} 
-                                <ul class="list-inline-item float-right ">
-                                    <li class="list-inline-item pr-3"><a ><i class="fa fa-edit "></i></a> </li>
-                                    <li class="list-inline-item pr-3"><a (click)="indexcategory(i)" data-toggle="modal" data-target="#exampleModalCenter" >
-                                        <i  class="fa fa-trash "></i>
-                                    </a>                                        
-                                    
-                                      <!-- Modal -->
-                                      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                          <div class="modal-content">
-                                            <div class="modal-header">
-                                              <h5 class="modal-title" id="exampleModalLongTitle">Are you sure ?</h5>
-                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                              </button>
-                                            </div>
-                                            <div class="modal-body " >
-                                                Your sub-category and products will be deleted which belong to this !
-                                                
-                                            </div>
-                                            <div class="modal-footer">
-                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                              <button (click)="removecategory(indexitem)" type="button" class="btn btn-primary" data-dismiss="modal">Delete</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div> </li>
-                                </ul>
-                                
+                    <div class="col-lg-3  col-md-6 col-sm-6 col-xs-12 " *ngFor="let item of categories index as i">
+                        <div class="icon">
+                            <ul class="list-inline-item float-right pr-2 ">
+                                <li class="list-inline-item pr-2"><a ><i class="fa fa-edit "></i></a> </li>
+                                <li class="list-inline-item pr-2"><a (click)="indexcategory(i)" data-toggle="modal" data-target="#ModalCenter" >
+                                    <i  class="fa fa-trash "></i> </a>                                        
+                                   </li>
+                            </ul>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="ModalLongTitle">Are you sure ?</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body " >
+                                    Your sub-category and products will be deleted which belong to this !
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button (click)="removecategory(indexitem)" type="button" class="btn btn-primary" data-dismiss="modal">Delete</button>
+                                </div>
+                              </div>
                             </div>
+                          </div>
+                        <div class="card mb-5" style="width: 15rem;">
+                            <img class="card-img-top" src="{{item.catimage}}" height="150 !important" >
+                            <div class="card-footer bg-transparent">{{item.catname}}  </div>
+                            
                           </div>
                         </div>
                     </div>
-
             </div>
         </div>
     </div>
