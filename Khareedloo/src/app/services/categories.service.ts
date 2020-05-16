@@ -1,26 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Categories } from '../models/Categories';
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class CategoriesService {
-  categories: Categories[];
-  constructor() {
-    this.categories = [
-      {
-        catname: 'Electronic Devices',
-        catimage: 'https://makingmovesincollege.com/wp-content/uploads/2015/08/electronics.jpg'
-      },
-      {
-        catname: 'Electronic Accessories',
-        catimage: 'https://www.techadvisor.co.uk/cmsdata/slideshow/3665277/linkad_fb_others_rev_thumb800.jpg'
-      },
-      {
-        catname: 'TV & Home Appliances',
-        catimage: 'https://i.gadgets360cdn.com/large/Amazon_Appliances_Sale_1473408424629.jpeg'
-      },
-      { catname: 'Health & Beauty',
-        catimage: 'https://lh5.googleusercontent.com/proxy/FgDpApLMtBpCnrcC-6TKAN-90YJUlO5GtJvoV8mmzH141unkevMEx2RxxdTkcRkEt_dE1x32BcHIB8cFnbc5cywVAYPF5HOp1hYY4IJ74NmlJ3mRdFeG52G1UBPnMycp' }
-    ]
-  }
+  url="http://localhost:8080/api/category/";
+  
+  constructor(private http:HttpClient) {
+}
+addCategory(category){
+  return this.http.post(this.url,category,{responseType:'text' as 'json'})
+}
+fetchCategory(){
+ return this.http.get(this.url)
+}
+fetchCategoryById(id){
+ return this.http.get(this.url+id)
+}
+updateCategory(category,id){
+ return this.http.put(this.url+id,category,{responseType:'text' as 'json'});
+}
+deleteCategoryById(id){
+  return this.http.delete(this.url+id,{responseType:'text' as 'json'});
+ 
+}
 }

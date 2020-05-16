@@ -3,6 +3,8 @@
         <div class="row mb-4">
             <div class="col">
                 <div class="pagetitle ">Sub-Categories</div>
+                
+                
             </div>
             <div class="col">
                 <div class="option">
@@ -31,31 +33,31 @@
                 <div class="card card-body">
                     <h2 class=" pb-4 pt-3">
                         <span class="text-dark">Add Sub-Category</span></h2>
-                    <form (ngSubmit)="onSubmit(subcategoryForm)" #subcategoryForm="ngForm">
+                        
+                    <form (ngSubmit)="onAddSubCategory(subcategoryForm.value)" #subcategoryForm="ngForm">
                         
                         <div class="form-group row"  >
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Category Name</label>
                             <div class="col-sm-5 "  >
-                                <select class="form-control" id="category"  name="categoryname" [ngModel]="default" >
-                                    <option  value="{{category.catname}}" *ngFor="let category of categories" >{{category.catname}} </option>
-                                   
-                                </select>
+                                <select class="form-control" ngModel name="category" >
+                                    <option [ngValue]="item" *ngFor="let item of categories">{{item.name}}</option>
+                                </select>                         
                             </div>
                         </div>
                         
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Sub-Category Name</label>
                             <div class="col-sm-5 ">
-                                <input type="text"  class="form-control" id="subcategoryname" placeholder="Enter Sub-Category Name"
-                                name="subcategoryname" ngModel required>
+                                <input type="text"  class="form-control" id="name" placeholder="Enter Sub-Category Name"
+                                name="name" ngModel required> 
                             </div>
 
                         </div>
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Image Url</label>
                             <div class="col-sm-5">
-                                <input type="url"  class="form-control" id="subcategoryimage" placeholder="Enter Image Url"
-                                name="subcategoryimage" ngModel required>
+                                <input type="url"  class="form-control" placeholder="Enter Image Url"
+                                name="image" ngModel required>
                             </div>
                         </div>
                         <button  type="submit" class="btn btn-primary" >Save</button>
@@ -67,7 +69,7 @@
                     <div class="col-lg-3  col-md-6 col-sm-6 col-xs-12 " *ngFor="let subcategory of subcategories" >
                         <div class="icon">
                             <ul class="list-inline-item float-right pr-2 ">
-                                <li class="list-inline-item pr-2"><a ><i class="fa fa-edit "></i></a> </li>
+                                <li class="list-inline-item pr-2"><a (click)="onEdit(subcategory)"><i class="fa fa-edit "></i></a> </li>
                                 <li class="list-inline-item pr-2"><a data-toggle="modal" data-target="#ModalCenter" >
                                     <i  class="fa fa-trash "></i> </a>                                        
                                    </li>
@@ -88,16 +90,17 @@
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                  <button  type="button" class="btn btn-primary" data-dismiss="modal">Delete</button>
+                                  <button  (click)="onDeleteById(subcategory)" type="button" class="btn btn-primary" data-dismiss="modal">Delete</button>
                                 </div>
                               </div>
                             </div>
                           </div>
+                         
                         <div class="card mb-2" style="width: 15rem;" >
-                            <div class="card-header bg-transparent">{{subcategory.catname}}  </div>
-                            <img class="card-img-top" src="{{subcategory.subimage}}" height="150 !important" >
-                            <div class="card-footer bg-transparent"> {{subcategory.subname}} </div>
-                            
+                            <div class="card-header bg-transparent" > {{subcategory.category.name}}</div>
+                            <img class="card-img-top" src="{{subcategory.image}}" height="150 !important" >
+                            <div class="card-footer bg-transparent"> {{subcategory.name}} </div>
+                           
                           </div>
                         </div>
                     </div>

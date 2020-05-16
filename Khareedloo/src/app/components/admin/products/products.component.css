@@ -1,0 +1,42 @@
+.mainpanel{
+    height: 100%;
+    background-color:#eaeaea;
+  }
+  .pagetitle{
+    font-weight: 700;
+    font-size: 27px;
+    
+  }
+  .option{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .search-block{
+    width: 220px;
+    
+  }
+  .search{
+    border:1px solid #999999;
+    border-radius: 20px;
+  
+  }
+  #search-icon{
+    color: #999999;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .search-button{
+    border:1px solid #999999;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;    
+    background-color: white;  
+  }
+  .fa-pencil-square-o{
+   cursor: pointer; 
+  }
+ .fa-trash{
+   margin-left: 15px;
+   color: #CD5C5C;
+   cursor: pointer;
+ }
+  

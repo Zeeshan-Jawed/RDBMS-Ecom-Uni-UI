@@ -1,8 +1,12 @@
 export interface Users {
-    name:string,
-    password:string,
-    contactNo:any,
     email:string,
-    registerdate:number,
-    address:string
+    password:string,
+    first_Name:string,
+    last_Name:string,
+    contactNo:any,
+    city:string,
+    zip:string,
+    address:string,
+    address2:string,
+    registationdate:any
   }

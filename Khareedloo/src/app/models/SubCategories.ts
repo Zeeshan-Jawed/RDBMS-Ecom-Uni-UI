@@ -1,7 +1,5 @@
 
 export interface SubCategories {
-    catname:string,
-    subname:string,
-    subimage?:any
-    
+    name:string,
+    image?:any
   }

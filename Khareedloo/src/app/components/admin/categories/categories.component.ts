@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriesService } from 'src/app/services/categories.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Categories } from 'src/app/models/Categories';
 
 @Component({
   selector: 'app-categories',
@@ -8,32 +10,28 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
-  categories=[];
+  message: any;
+  categories: Object;
   
-  indexitem:number;
-  constructor(private _categoriesService:CategoriesService) {}
-  ngOnInit() {
-    this.categories=this._categoriesService.categories;
+  constructor(private _CategoryService:CategoriesService,private router:Router) {}
+  ngOnInit() {this.onFetchCategories();}
+  onAddCategory(categoryForm:Categories){
+    let res=this._CategoryService.addCategory(categoryForm);
+    res.subscribe((data)=>this.message=data);
+    this.onFetchCategories();
   }
-// addcategory(cat,img){
-//   this.categories.push({
-//     list:cat.value,
-//     image:img.value
-//   });
- 
-// }
-onSubmit(categoryForm :NgForm){
-console.log(categoryForm.value.categoryname)
-this.categories.push({
-  name:categoryForm.value.categoryname,
-  image:categoryForm.value.categoryimage
-})
-}
-removecategory(item){
-  this.categories.splice(item,1)
-  
-}
-indexcategory(i){
-  this.indexitem=i
-}
+  onFetchCategories(){
+    setTimeout(() => {
+     let resp=this._CategoryService.fetchCategory();
+     resp.subscribe((data)=>this.categories=data)
+    }, 1000);
+ }
+ onEdit(category){
+     this.router.navigate(["admin/categories/edit",category.id]);   
+ }
+ onDeleteById(category){
+   let res=this._CategoryService.deleteCategoryById(category.id);
+   res.subscribe((data)=>this.message=data)
+   this.onFetchCategories();
+ }
 }

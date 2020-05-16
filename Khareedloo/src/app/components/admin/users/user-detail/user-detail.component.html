@@ -1,0 +1,90 @@
+<div class=" container mainpanel ">
+    <div class="container p-3">
+        <div class="row mb-4">
+            <div class="col">
+                <div class="pagetitle ">Edit User</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            <ul class="nav nav-pills card-header-pills">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">Profile</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled" href="#">WishList</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <form (ngSubmit)="onUpdateUser(userform.value)" #userform="ngForm">
+                                <div class="form-group row">
+                                    <label for="colFormLabel" class="col-md-2 col-form-label">First Name</label>
+                                    <div class="col-md-4 ">
+                                        <input type="text"  class="form-control"placeholder="Enter First Name"
+                                        [(ngModel)]="user.first_Name" name="first_Name">
+                                    </div>
+                                    <label for="colFormLabel" class="col-md-2 col-form-label">Last Name</label>
+                                    <div class="col-md-4 ">
+                                        <input type="text"  class="form-control"placeholder="Enter Last Name" 
+                                        [(ngModel)]="user.last_Name" name="last_Name">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="colFormLabel" class="col-md-2 col-form-label">Email</label>
+                                    <div class="col-md-4 ">
+                                        <input type="email"  class="form-control"  placeholder="Enter Email Name"
+                                        [(ngModel)]="user.email" name="email">
+                                    </div>
+                                    <label for="colFormLabel" class="col-md-2 col-form-label">Password</label>
+                                    <div class="col-md-4 ">
+                                        <input type="password"  class="form-control"placeholder="Enter Password" 
+                                        [(ngModel)]="user.password" name="password">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="colFormLabel" class="col-md-2 col-form-label">Contact No.</label>
+                                    <div class="col-md-4 ">
+                                        <input type="text"  class="form-control"  placeholder="Enter Contact No."
+                                        [(ngModel)]="user.contactNo" name="contactNo">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="colFormLabel" class="col-md-2 col-form-label">City</label>
+                                    <div class="col-md-4 ">
+                                        <input type="text"  class="form-control"  placeholder="Enter City"
+                                        [(ngModel)]="user.city" name="city">
+                                    </div>
+                                    <label for="colFormLabel" class="col-md-2 col-form-label">Postal Code</label>
+                                    <div class="col-md-4 ">
+                                        <input type="text"  class="form-control"  placeholder="Enter Postal Code"
+                                        [(ngModel)]="user.zip" name="zip">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="colFormLabel" class="col-md-2 col-form-label">Address</label>
+                                    <div class="col-md-4 ">
+                                        <input type="text"  class="form-control"  placeholder="Enter Address"
+                                        [(ngModel)]="user.address" name="address">
+                                    </div>
+                                    <label for="colFormLabel" class="col-md-2 col-form-label">Second Address</label>
+                                    <div class="col-md-4 ">
+                                        <input type="text"  class="form-control"  placeholder="Enter Second Address"
+                                        [(ngModel)]="user.address2" name="address2">
+                                    </div>
+                                </div>
+                                <button  type="submit" class="btn btn-primary" >Update</button>
+                                <div class="alert alert-primary" role="alert" >
+                                    {{message}}
+                                  </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

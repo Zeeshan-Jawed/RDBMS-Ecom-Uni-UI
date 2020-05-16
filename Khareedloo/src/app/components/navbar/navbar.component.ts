@@ -10,7 +10,7 @@ export class NavbarComponent implements OnInit {
   constructor(private _categoriesService:CategoriesService) {}
   categories={};
   ngOnInit() {
-    this.categories=this._categoriesService.categories;
+    // this.categories=this._categoriesService.categories;
   }
   
 }

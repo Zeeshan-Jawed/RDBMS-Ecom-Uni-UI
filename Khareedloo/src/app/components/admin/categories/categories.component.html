@@ -31,13 +31,13 @@
                 <div class="card card-body">
                     <h2 class=" pb-4 pt-3">
                         <span class="text-dark">Add Category</span></h2>
-                    <form (ngSubmit)="onSubmit(categoryForm)" #categoryForm="ngForm">
+                    <form (ngSubmit)="onAddCategory(categoryForm.value)" #categoryForm="ngForm">
 
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Category Name</label>
                             <div class="col-sm-5 ">
                                 <input type="text"  class="form-control" id="categoryname" placeholder="Enter Category Name"
-                                name="categoryname" ngModel required>
+                                name="name" ngModel required>
                             </div>
 
                         </div>
@@ -45,7 +45,7 @@
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Image Url</label>
                             <div class="col-sm-5">
                                 <input type="url"  class="form-control" id="categoryimage" placeholder="Enter Image Url"
-                                name="categoryimage" ngModel required>
+                                name="image" ngModel required>
                             </div>
                         </div>
                         <button  type="submit" class="btn btn-primary" [disabled]="!categoryForm.valid">Save</button>
@@ -57,8 +57,8 @@
                     <div class="col-lg-3  col-md-6 col-sm-6 col-xs-12 " *ngFor="let item of categories index as i">
                         <div class="icon">
                             <ul class="list-inline-item float-right pr-2 ">
-                                <li class="list-inline-item pr-2"><a ><i class="fa fa-edit "></i></a> </li>
-                                <li class="list-inline-item pr-2"><a (click)="indexcategory(i)" data-toggle="modal" data-target="#ModalCenter" >
+                                <li class="list-inline-item pr-2"><a (click)="onEdit(item)"><i class="fa fa-edit "></i></a> </li>
+                                <li class="list-inline-item pr-2"><a  data-toggle="modal" data-target="#ModalCenter" >
                                     <i  class="fa fa-trash "></i> </a>                                        
                                    </li>
                             </ul>
@@ -78,14 +78,14 @@
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                  <button (click)="removecategory(indexitem)" type="button" class="btn btn-primary" data-dismiss="modal">Delete</button>
+                                  <button (click)="onDeleteById(item)" type="button" class="btn btn-primary" data-dismiss="modal">Delete</button>
                                 </div>
                               </div>
                             </div>
                           </div>
                         <div class="card mb-5" style="width: 15rem;">
-                            <img class="card-img-top" src="{{item.catimage}}" height="150 !important" >
-                            <div class="card-footer bg-transparent">{{item.catname}}  </div>
+                            <img class="card-img-top" src="{{item.image}}" height="150 !important" >
+                            <div class="card-footer bg-transparent">{{item.name}}  </div>
                             
                           </div>
                         </div>

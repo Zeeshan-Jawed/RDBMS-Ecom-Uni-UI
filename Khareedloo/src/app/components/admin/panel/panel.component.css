@@ -7,10 +7,8 @@
 }
 
 #sidebar-container{
-    height:150vh;
-    background-color: #001737;
-    padding: 0;
-    width: 215px;
+    height:130vh;
+    background-color: #001737; 
     
 }
 #sidebar-container .list-group a {
@@ -21,7 +19,6 @@
     font-family: 'Roboto Slab', serif;
 }
 #sidebar-container .list-group a :hover{
-    
     color: white;
     
 }
@@ -31,12 +28,51 @@ li.list-group-item{
     font-weight:900;
     font-size: 14px;
     font-family: 'Roboto Slab', serif;
-    
     text-transform: uppercase;
 }
 
 .navclr{
     background-color: #001737;
+    color: white;
+    padding-top: 10px;
+}
+#sticky-top{
+    background-color: black !important;
 }
 
+nav ul{
+    list-style-type: none;
+     float: right;
+     padding-right: 100px;
+     padding-top: 6px;
+}
+.dropdown {
+    display: inline-block;
+  }
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 130px;
+    z-index: 1;
+    
+
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+  }
+  
+  .dropdown-content a:hover {
+      background-color:#316DC3;
+        color: white;
+}
+  
+.dropdown:hover .dropdown-content {display: block;}
 

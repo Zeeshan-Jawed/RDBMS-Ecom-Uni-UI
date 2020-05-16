@@ -11,8 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { LoginComponent } from './components/admin/login/login.component';
-import { MyaccountComponent } from './components/myaccount/myaccount.component';
+import { LoginComponent } from './components/login/login.component';
 import { PanelComponent } from './components/admin/panel/panel.component';
 import { NavBarComponent } from './components/admin/nav-bar/nav-bar.component';
 import { CategoriesComponent } from './components/admin/categories/categories.component';
@@ -31,6 +30,9 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { DashComponent } from './components/admin/dash/dash.component';
 import { BannerComponent } from './components/admin/banner/banner.component';
 import { BannerService } from './services/banner.service';
+import { UserDetailComponent } from './components/admin/users/user-detail/user-detail.component';
+import { CategoryDetailComponent } from './components/admin/categories/category-detail/category-detail.component';
+import { SubCategoryDetailComponent } from './components/admin/sub-categories/sub-category-detail/sub-category-detail.component';
 
 
 @NgModule({
@@ -42,7 +44,6 @@ import { BannerService } from './services/banner.service';
     FooterComponent,
     DashboardComponent,
     LoginComponent,
-    MyaccountComponent,
     PanelComponent,
     NavBarComponent,
     CategoriesComponent,
@@ -54,7 +55,9 @@ import { BannerService } from './services/banner.service';
     NotfoundComponent,
     DashComponent,
     BannerComponent,
-    
+    UserDetailComponent,
+    CategoryDetailComponent,
+    SubCategoryDetailComponent
   ],
   imports: [
     BrowserModule,

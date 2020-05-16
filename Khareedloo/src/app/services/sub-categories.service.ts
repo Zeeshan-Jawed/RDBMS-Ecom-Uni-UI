@@ -1,27 +1,43 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { CategoriesComponent } from '../components/admin/categories/categories.component';
 import { CategoriesService } from './categories.service';
-import { SubCategories } from '../models/SubCategories';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class SubCategoriesService {
-  categories=[];
-  subcategories:SubCategories[];
+  url="http://localhost:8080/api/subcategory/";
+  categories: Object;
+
   
-  constructor(private _categoriesService:CategoriesService) {
-    this.categories=this._categoriesService.categories;
-    this.subcategories = [
-      
-      { catname:'Electronic Device',
-        subname: 'Smartphones',
-        subimage: 'https://www.gizmochina.com/wp-content/uploads/2019/02/smartphones.jpg'
-      },
-      { catname:'Electronic Accessories',
-        subname: 'Storage',
-        subimage: 'https://www.ihaha.rw/wp-content/uploads/2019/04/slider2.png'
-      }]
-      
-   }
+  
+  constructor(private http:HttpClient,private _categoriesService:CategoriesService) {
+    
+      let resp=this._categoriesService.fetchCategory()
+      resp.subscribe((data)=>this.categories=data)
+      setTimeout(() => {
+        console.log(this.categories)
+      }, 1000);
+    
+    }
+   
+  
+ 
+  addSubCategory(subcategory){
+    return this.http.post(this.url,subcategory,{responseType:'text' as 'json'})
+  }
+  fetchSubCategory(){
+   return this.http.get(this.url)
+  }
+  fetchSubCategoryById(id){
+   return this.http.get(this.url+id)
+  }
+  updateSubCategory(subcategory,id){
+   return this.http.put(this.url+id,subcategory,{responseType:'text' as 'json'});
+  }
+  deleteSubCategoryById(id){
+    return this.http.delete(this.url+id,{responseType:'text' as 'json'});
+  }
 }

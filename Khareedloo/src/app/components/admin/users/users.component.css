@@ -1,6 +1,6 @@
 .mainpanel{
     height: 100%;
-    background-color: #eaeaea;
+    background-color:#eaeaea;
   }
   .pagetitle{
     font-weight: 700;
@@ -15,7 +15,7 @@
     width: 220px;
     
   }
-  .serach{
+  .search{
     border:1px solid #999999;
     border-radius: 20px;
   
@@ -31,5 +31,12 @@
     border-bottom-right-radius: 20px;    
     background-color: white;  
   }
- 
+  .fa-pencil-square-o{
+   cursor: pointer; 
+  }
+ .fa-trash{
+   margin-left: 15px;
+   color: #CD5C5C;
+   cursor: pointer;
+ }
   
