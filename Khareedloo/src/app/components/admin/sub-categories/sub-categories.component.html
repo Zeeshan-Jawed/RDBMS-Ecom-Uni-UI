@@ -66,7 +66,8 @@
             </div>
             <div class="card-body pt-0" >
                 <div class="row" >
-                    <div class="col-lg-3  col-md-6 col-sm-6 col-xs-12 " *ngFor="let subcategory of subcategories" >
+                    <div class="col-lg-3  col-md-6 col-sm-6 col-xs-12 " *ngFor="let item of subcategories index as i" >
+                        
                         <div class="icon">
                             <ul class="list-inline-item float-right pr-2 ">
                                 <li class="list-inline-item pr-2"><a (click)="onEdit(subcategory)"><i class="fa fa-edit "></i></a> </li>
@@ -96,10 +97,10 @@
                             </div>
                           </div>
                          
-                        <div class="card mb-2" style="width: 15rem;" >
-                            <div class="card-header bg-transparent" > {{subcategory.category.name}}</div>
-                            <img class="card-img-top" src="{{subcategory.image}}" height="150 !important" >
-                            <div class="card-footer bg-transparent"> {{subcategory.name}} </div>
+                        <div class="card mb-2" style="width: 15rem;">
+                            <!-- <div class="card-header bg-transparent" > </div> -->
+                            <img class="card-img-top" src="{{item.image}}" height="150 !important" >
+                            <div class="card-footer bg-transparent"> {{item.name}} </div>
                            
                           </div>
                         </div>

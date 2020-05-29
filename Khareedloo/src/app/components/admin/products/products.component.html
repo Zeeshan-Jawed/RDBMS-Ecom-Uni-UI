@@ -3,8 +3,6 @@
         <div class="row mb-4">
             <div class="col">
                 <div class="pagetitle ">Products</div>
-                
-                
             </div>
             <div class="col">
                 <div class="option">
@@ -34,23 +32,15 @@
                     <h2 class=" pb-4 pt-3">
                         <span class="text-dark">Add Products</span></h2>
                         
-                    <form (ngSubmit)="onAddProduct(productForm.value)" #productForm="ngForm">
+                    <form (ngSubmit)="onAddproduct(productForm.value)" #productForm="ngForm">
                         
-                        <div class="form-group row"  >
-                            <label for="colFormLabel" class="col-sm-2 col-form-label">Category Name</label>
-                            <div class="col-sm-5 "  >
-                                <select class="form-control" ngModel name="category" >
-                                    <option [ngValue]="item" *ngFor="let item of categories">{{item.name}}</option>
-                                </select>                         
-                            </div>
-                        </div>
-                        
+                    
                         <div class="form-group row">
                             <label for="colFormLabel" class="col-sm-2 col-form-label">Sub-Category Name</label>
                             <div class="col-sm-5 ">
-                                <select class="form-control" ngModel name="category" >
-                                    <option [ngValue]="item" *ngFor="let item of categories">{{item.name}}</option>
-                                </select> 
+                                <select class="form-control" ngModel name="subCategory" >
+                                    <option [ngValue]="item" *ngFor="let item of subcategories">{{item.name}}</option>
+                                </select>     
                             </div>
                             
                         </div>
@@ -75,7 +65,7 @@
             </div>
             <div class="card-body pt-0" >
                 <div class="row" >
-                    <div class="col-lg-3  col-md-6 col-sm-6 col-xs-12 " *ngFor="let subcategory of subcategories" >
+                    <div class="col-lg-3  col-md-6 col-sm-6 col-xs-12 " *ngFor="let item of products" >
                         <div class="icon">
                             <ul class="list-inline-item float-right pr-2 ">
                                 <li class="list-inline-item pr-2"><a (click)="onEdit(subcategory)"><i class="fa fa-edit "></i></a> </li>
@@ -106,9 +96,9 @@
                           </div>
                          
                         <div class="card mb-2" style="width: 15rem;" >
-                            <div class="card-header bg-transparent" > {{subcategory.category.name}}</div>
-                            <img class="card-img-top" src="{{subcategory.image}}" height="150 !important" >
-                            <div class="card-footer bg-transparent"> {{subcategory.name}} </div>
+                            
+                            <img class="card-img-top" src="{{item.image}}" height="150 !important" >
+                            <div class="card-footer bg-transparent"> {{item.name}} </div>
                            
                           </div>
                         </div>

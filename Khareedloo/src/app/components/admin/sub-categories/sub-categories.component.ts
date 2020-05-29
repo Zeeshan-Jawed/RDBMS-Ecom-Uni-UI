@@ -9,30 +9,25 @@ import { SubCategories } from 'src/app/models/SubCategories';
   styleUrls: ['./sub-categories.component.css']
 })
 export class SubCategoriesComponent implements OnInit {
-  binding:String="Hello";
   message: any;
-  categories:any;
-  subcategories: Object;
+  categories:any={};
+  subcategories: any;
   
   constructor(private _SubCategoryService:SubCategoriesService,private router:Router) {}
   ngOnInit() {
     this.getcatgories();
     this.categories=this._SubCategoryService.categories;
-    this.onFetchSubCategories()
+    this.onFetchSubCategories();
+    
   }
   getcatgories(){
-    setTimeout(() => {
-      this.categories=this._SubCategoryService.categories;
-    }, 3000);
+    
   }
   
   onAddSubCategory(subcategoryForm:SubCategories){
-    console.log(subcategoryForm)
     let res=this._SubCategoryService.addSubCategory(subcategoryForm);
     res.subscribe((data)=>this.message=data);
     this.onFetchSubCategories();
-    
-    
   }
   onFetchSubCategories(){
     setTimeout(() => {

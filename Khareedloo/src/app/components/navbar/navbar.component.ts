@@ -6,11 +6,15 @@ import { CategoriesService } from 'src/app/services/categories.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  categories:any;
+  constructor(private _CategoryService:CategoriesService) {}
   
-  constructor(private _categoriesService:CategoriesService) {}
-  categories={};
   ngOnInit() {
-    // this.categories=this._categoriesService.categories;
+    
+      setTimeout(() => {
+       let resp=this._CategoryService.fetchCategory();
+       resp.subscribe((data)=>this.categories=data)
+      }, 1000);
   }
   
 }

@@ -8,12 +8,11 @@
                     <form (submit)="onSubmit()">
                         <div class="form-group">
                             <label for="email" class="mt-1">Email</label>
-                            <input type="email" name="email"  class="form-control mb-sm-3 shadow-none" required>
+                            <input type="email" name="email" class="form-control mb-sm-3 shadow-none" required>
                             <label for="password">Password</label>
-                            <input type="password" name="password"  class="form-control shadow-none" required>
+                            <input type="password" name="password" class="form-control shadow-none" required>
                         </div>
-                        <input type="submit" value="Login" 
-                            class="btn btn-purple btn-block ">
+                        <input type="submit" value="Login" class="btn btn-purple btn-block ">
                     </form>
                 </div>
 
@@ -25,58 +24,60 @@
                 <div class="card-body">
                     <h1 class="text-center pb-4 pt-3"> <span class="text-dark"><i
                                 class="fa fa-lock fa-fw"></i>Register:</span></h1>
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                            <div class="form-group ">
-                                <label>Full Name</label>
-                                <div class="input-group"><input type="text"  class="form-control shadow-none"
-                                        name="name" maxlength="25" placeholder="Full Name*"
-                                        aria-required="true">
-                                    <div class="input-group-prepend"><span class="input-group-text"
-                                            id="inputGroupPrepend"><i class="fa fa-user"></i></span></div>
-                                </div>
-                            </div>
-                        </div>
+                    <form (ngSubmit)="onAddUser(userForm.value)" #userForm="ngForm">
+                        <div class="row">
 
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                            <div class="form-group ">
-                                <label>Mobile Number</label>
-                                <div class="input-group"><input type="text" class="form-control shadow-none"
-                                        name="phone" maxlength="13"
-                                        placeholder="+92xxxxxxxxx" aria-required="true">
-                                    <div class="input-group-prepend"><span class="input-group-text"
-                                            id="inputGroupPrepend"><i class="fa fa-mobile"></i></span></div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+
+                                <div class="form-group ">
+                                    <label>First Name</label>
+                                    <div class="input-group"><input type="text" class="form-control shadow-none"
+                                        name="first_Name" ngModel maxlength="25" placeholder="Full Name*" aria-required="true">
+                                        <div class="input-group-prepend"><span class="input-group-text"
+                                                id="inputGroupPrepend"><i class="fa fa-user"></i></span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                <div class="form-group ">
+                                    <label>Last Name</label>
+                                    <div class="input-group"><input type="text" class="form-control shadow-none"
+                                        name="last_Name" ngModel placeholder="Enter Last name">
+                                        <div class="input-group-prepend"><span class="input-group-text"
+                                                id="inputGroupPrepend"><i class="fa fa-user"></i></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                <div class="form-group ">
+                                    <label>Email Address</label>
+                                    <div class="input-group"><input type="email" class="form-control shadow-none"
+                                        name="email" ngModel placeholder="Email Address*" aria-required="true"
+                                            d-place="Email Address*">
+                                        <div class="input-group-prepend"><span class="input-group-text"
+                                                id="inputGroupPrepend"><i class="fa fa-envelope"></i></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <div class="input-group "><input type="password" class="form-control shadow-none"
+                                        name="password" ngModel placeholder="Password*" aria-required="true">
+                                        <div class="input-group-prepend"><span class="input-group-text"
+                                                id="inputGroupPrepend"><i class="fa fa-lock"></i></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-purple btn-block mt-1">Register</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                            <div class="form-group ">
-                                <label>Email Address</label>
-                                <div class="input-group"><input type="email" 
-                                        class="form-control shadow-none" name="email" 
-                                        placeholder="Email Address*" aria-required="true" d-place="Email Address*">
-                                    <div class="input-group-prepend"><span class="input-group-text"
-                                            id="inputGroupPrepend"><i class="fa fa-envelope"></i></span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                            <div class="form-group">
-                                <label>Password</label>
-                                <div class="input-group "><input type="password"
-                                        class="form-control shadow-none" name="password" placeholder="Password*"
-                                        aria-required="true">
-                                    <div class="input-group-prepend"><span class="input-group-text"
-                                            id="inputGroupPrepend"><i class="fa fa-lock"></i></span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-purple btn-block mt-1">Register</button>
-                            </div>
-                        </div>
-                    </div>
+                    </form>
+
                 </div>
             </div>
         </div>

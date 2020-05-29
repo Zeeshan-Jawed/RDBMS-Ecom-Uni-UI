@@ -7,7 +7,7 @@
                     categories
                   </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <span class="dropdown-item " *ngFor="let item of categories">{{item.catname}}</span>
+                    <span class="dropdown-item " *ngFor="let item of categories">{{item.name}}</span>
                     <span class="dropdown-item" [routerLink]="['/categories']" >View All</span>
                   </div>
             </div>

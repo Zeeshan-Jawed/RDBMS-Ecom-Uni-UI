@@ -18,7 +18,6 @@ export class SubCategoriesService {
       let resp=this._categoriesService.fetchCategory()
       resp.subscribe((data)=>this.categories=data)
       setTimeout(() => {
-        console.log(this.categories)
       }, 1000);
     
     }
